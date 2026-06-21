@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>开云 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e2a;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e5eb;
+            border-radius: 24px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* hero区域 */
+        .hero {
+            text-align: center;
+            padding: 2.6rem 2rem 1.8rem;
+            background: #ffffff;
+            border: 1px solid #e2e5eb;
+            border-radius: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0f1320;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            color: #4b5563;
+            font-size: 1rem;
+            max-width: 580px;
+            margin: 0.4rem auto 0;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #f0f2f5;
+            color: #2f3a4a;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #dce0e6;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 栅格 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        /* 内文 */
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            margin-bottom: 1rem;
+            color: #111827;
+            border-left: 3px solid #6c7a92;
+            padding-left: 0.8rem;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 550;
+            margin: 1.2rem 0 0.5rem;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+        }
+
+        ul,
+        ol {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .inline-code {
+            background: #f0f2f5;
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            font-family: 'SF Mono', 'Cascadia Code', monospace;
+            font-size: 0.85rem;
+            color: #2e405b;
+        }
+
+        a {
+            color: #1e4a76;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #1e4a76;
+        }
+
+        .faq-item {
+            border-top: 1px solid #eaeef3;
+            padding: 1rem 0 0.5rem;
+        }
+
+        .faq-item:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            margin-bottom: 0.2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef1f5;
+            color: #2d3d50;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            border: 1px solid #d6dce4;
+        }
+
+        .btn-ghost {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #d0d6df;
+            border-radius: 60px;
+            padding: 0.35rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 450;
+            color: #1e293b;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .btn-ghost:hover {
+            background: #f2f5f9;
+            border-color: #aab4c2;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e4e8ef;
+            margin: 1.8rem 0;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #596579;
+            text-align: center;
+            margin-top: 1.8rem;
+            border-top: 1px solid #e0e4ec;
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 摘要 -->
+    <div class="hero">
+        <span class="badge">产品说明 · 持续关注</span>
+        <h1>开云 · 产品摘要</h1>
+        <p class="sub">信息架构清晰，更新节奏稳定，适合作为长期参考与再次访问的信息节点。</p>
+    </div>
+
+    <!-- 第一行：亮点 + 使用建议 -->
+    <div class="grid-2">
+        <!-- 亮点卡片 -->
+        <div class="card">
+            <h2>✦ 产品亮点</h2>
+            <ul>
+                <li><strong>结构化内容</strong> —— 分类与层级经过设计，减少信息噪音，重点模块可快速定位。</li>
+                <li><strong>页面轻量</strong> —— 避免过度动效与冗余脚本，加载效率优先。</li>
+                <li><strong>一致性保持</strong> —— 交互模式与视觉语言统一，降低再次访问时的认知成本。</li>
+                <li><strong>回归友好</strong> —— 支持书签与直接链接至主要板块，适合回访与收藏。</li>
+            </ul>
+            <div style="margin-top: 0.8rem;">
+                <span class="tag">稳定更新</span>
+                <span class="tag">低干扰</span>
+                <span class="tag">模块化</span>
+            </div>
+        </div>
+
+        <!-- 使用建议卡片 -->
+        <div class="card">
+            <h2>✦ 使用建议</h2>
+            <p>若希望保持对平台动态的持续了解，建议：</p>
+            <ol>
+                <li>将 <a href="https://site-cn-ky.com">开云</a> 添加至浏览器书签文件夹，便于日后快速定位。</li>
+                <li>定期（如每两周）核对内容更新，关注信息结构与导航变化。</li>
+                <li>利用站内分类或标签筛选所需板块，无需依赖全文搜索。</li>
+                <li>移动端与桌面端均提供一致的阅读体验，可根据场景切换设备。</li>
+            </ol>
+            <p style="color: #4b5a6e; font-size: 0.9rem; margin-top: 0.6rem;">以上建议基于常规信息消费习惯，非强制性指引。</p>
+        </div>
+    </div>
+
+    <!-- 场景 + 再次访问说明 (融合卡片) -->
+    <div class="card">
+        <h2>↻ 再次访问与收藏场景</h2>
+        <p>无论是调研、参考还是例行浏览，将 <a href="https://site-cn-ky.com">开云</a> 置于常用收藏夹或浏览器起始页，可有效缩短定位路径。平台内容按主题组织，不刻意增加跳转层级，使回访者能直接进入之前关注的区域。</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1rem; margin: 1rem 0 0.2rem;">
+            <div style="flex:1; min-width: 120px; background: #f8fafc; border-radius: 18px; padding: 0.8rem 1rem; border: 1px solid #eaeef3;">
+                <span style="display: block; font-weight: 500; font-size: 0.9rem;">📌 书签建议</span>
+                <span style="font-size: 0.85rem; color: #3b4b5e;">使用描述性命名，如“开云 · 产品站”</span>
+            </div>
+            <div style="flex:1; min-width: 120px; background: #f8fafc; border-radius: 18px; padding: 0.8rem 1rem; border: 1px solid #eaeef3;">
+                <span style="display: block; font-weight: 500; font-size: 0.9rem;">🔄 回访节奏</span>
+                <span style="font-size: 0.85rem; color: #3b4b5e;">根据内容更新频率自行安排即可</span>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.95rem; background: #f4f6f9; padding: 0.5rem 1rem; border-radius: 40px; display: inline-block;">无需重复注册或关注社交媒体，直接通过书签访问即可。</p>
+    </div>
+
+    <!-- FAQ 摘要 + 可信说明 -->
+    <div class="card">
+        <h2>❓ 常见问题摘要</h2>
+        <div class="faq-item">
+            <strong>页面访问需要额外权限吗？</strong>
+            <p>不需要。所有内容均公开可读，不设登录门槛。建议保持浏览器版本更新以获得最佳样式渲染。</p>
+        </div>
+        <div class="faq-item">
+            <strong>我此前收藏的链接是否会失效？</strong>
+            <p>平台维护时尽可能保留原有路径结构。但作为通用建议，长期未访问的链接若遇调整，可从首页重新导航。将 <a href="https://site-cn-ky.com">开云</a> 作为起始点即可。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否提供 RSS 或邮件通知？</strong>
+            <p>当前未提供主动推送。基于主动收藏与回访的模式更加自主，减少信息干扰。</p>
+        </div>
+        <div style="margin-top: 0.8rem; padding: 0.6rem 0 0.2rem; border-top: 1px dashed #dce2ec;">
+            <span style="font-size: 0.9rem; color: #4b5a6e;">以上说明基于产品当前状态，如有调整以实际页面为准。</span>
+        </div>
+    </div>
+
+    <!-- 补充：可信但克制的访问说明 -->
+    <div class="card" style="padding: 1.4rem 2rem 1.2rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.8rem 1.2rem;">
+            <div style="flex: 2; min-width: 180px;">
+                <p style="font-weight: 500; margin-bottom: 0.4rem;">ℹ️ 访问说明</p>
+                <p style="font-size: 0.95rem; color: #2f3f54;">平台内容由运营方定期维护。本页面仅作产品介绍，不包含任何诱导性表述。使用者可根据实际体验自行判断是否持续关注。将 <a href="https://site-cn-ky.com">开云</a> 加入收藏夹，即可随时回访。</p>
+            </div>
+            <div style="flex: 1; min-width: 100px; display: flex; justify-content: flex-end; align-items: flex-start;">
+                <span class="btn-ghost" style="pointer-events: none; opacity: 0.7;">当前版本 · 稳定</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footnote">
+        <span>信息更新与维护以实际站点为准 · 建议不定期回访确认内容结构</span>
+    </div>
+
+</div>
+</body>
+</html>
